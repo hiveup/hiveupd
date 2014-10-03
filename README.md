@@ -1,4 +1,0 @@
-hiveup.d
-========
-
-hiveup deamon

@@ -1,0 +1,19 @@
+{
+  "name": "hiveupd",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.0.2",
+    "cookie-parser": "^1.0.1",
+    "debug": "^0.7.4",
+    "express": "~4.0.0",
+    "express-session": "^1.0.3",
+    "mongoose": "^3.8.8",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0"
+  }
+}
