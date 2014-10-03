@@ -94,7 +94,7 @@ angular.module('hiveup-main')
             .error(function() {
                 console.log('fail edit');
             });
-    }
+    },
     getUser: function () {
     	return state;
     }
