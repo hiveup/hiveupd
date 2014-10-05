@@ -12,15 +12,15 @@ angular.module('hiveup-main', [
 .config(function ($routeProvider) {
     $routeProvider
     .when('/signup', {
-        templateUrl: 'views/signup.html',
+        templateUrl: 'scripts/user/_signup.html',
         controller: 'UserSignupCtrl'
     })
     .when('/login', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'scripts/user/_login.html',
         controller: 'UserLoginCtrl'
     })
     .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'scripts/main/_main.html',
         controller: 'MainCtrl'
     })
     .otherwise({

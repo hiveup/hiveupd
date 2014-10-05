@@ -19,7 +19,7 @@
     <![endif]-->
 
     <!-- Container for alertbar -->
-    <div class="container" ng-include="'views/alertbar.html'"></div>
+    <div class="container" ng-include="'scripts/alertbar/_alerts.html'"></div>
     <!-- End of Container for alertbar -->
 
     <div id="wrapper">
@@ -86,19 +86,17 @@
     <script src="scripts/app.js"></script>
 
         <!-- Angular Services -->
-    <script src="scripts/services/errorService.js"></script>
-
-    <!-- for passport -->
-    <script src="scripts/services/userService.js"></script>
+    <script src="scripts/alertbar/errorService.js"></script>
+    <script src="scripts/user/userService.js"></script>
 
     <!-- Angular Directives -->
-    <script src="scripts/directives/alertBar.js"></script>
+    <script src="scripts/alertbar/alertbarDir.js"></script>
 
     <!-- Angular Controllers -->
-    <script src="scripts/controllers/alertbar.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/alertbar/alertbarCtrl.js"></script>
+    <script src="scripts/main/mainCtrl.js"></script>
 
-    <script src="scripts/controllers/user.js"></script>
+    <script src="scripts/user/userCtrl.js"></script>
     <!-- End of Angular SCRIPTS -->
 
 </body>

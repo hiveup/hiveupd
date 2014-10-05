@@ -2,7 +2,7 @@ angular.module('hiveup-main')
 .directive('alertbar', function () {
     return {
         restrict:'EA',
-        templateUrl:'scripts/directives/template/alertBar.html',
+        templateUrl:'scripts/alertbar/_alertbar.html',
         transclude:true,
         replace:true
     };
