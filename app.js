@@ -18,7 +18,9 @@ mongoose.connect(config.db.url);
 
 //Authetification for passport
 var passport = require('passport');
-require('./config/passport')(passport); // pass passport for configuration
+require('./passport/passport')(passport); // pass passport for configuration
+require('./passport/passport-google')(passport);
+require('./passport/passport-linkedin')(passport);
 
 //Routes
 var routes = require('./routes/index');
@@ -60,6 +62,7 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
+        console.log(err);
         res.status(err.status || 500);
         res.send({'error' : {
             message: err.message,
