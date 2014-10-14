@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 //require('./routes/other_routes')(app);
-require('./routes/users')(app, passport);
+require('./routes/oauth')(app, passport);
 
 
 /// catch 404 and forwarding to error handler

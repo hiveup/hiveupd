@@ -101,29 +101,6 @@ app.post('/users/edit', isAuthenticated, function(req, res) {
     });
 });
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/userinfo.profile',
-                                            'https://www.googleapis.com/auth/userinfo.email'] }),
-  function(req, res){
-    // The request will be redirected to Google for authentication, so this
-    // function will not be called.
-  });
-
-app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
-
-app.get('/auth/linkedin',
-  passport.authenticate('linkedin', { scope: ['r_basicprofile', 'r_emailaddress'] }));
-
-app.get('/auth/linkedin/callback',
-  passport.authenticate('linkedin', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
 
 
 };
