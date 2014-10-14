@@ -1,7 +1,4 @@
-// config/passport.js
-
-//var User       		= require('../models/user');
-
+var User = require('../../app/models/user');
 
 module.exports = function(passport) {
 
@@ -15,9 +12,9 @@ module.exports = function(passport) {
 
     // deserialize the user
     passport.deserializeUser(function(id, done) {
-        //User.findById(id, function(err, user) {
-        done(err, {});
-        //});
+        User.findById(id, function(err, user) {
+            done(err, user);
+        });
     });
 
 };

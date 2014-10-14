@@ -15,25 +15,32 @@ module.exports = function(passport) {
       },
       function(accessToken, refreshToken, profile, done) {
 
-        console.log(accessToken);
+        console.log("Google access token : ", accessToken);
 
-        data = {};
-        data.googleId = profile.id;
-        data.email = profile._json.email;
-        data.token = accessToken;
-        data.familyName = profile.name.familyName;
-        data.givenName = profile.name.givenName;
-        data.hasAccount = true;
+        user = {};
+        user.googleId = profile.id;
+        user.email = profile._json.email;
+        user.token = accessToken;
+        user.familyName = profile.name.familyName;
+        user.givenName = profile.name.givenName;
+        user.hasAccount = true;
 
-        Account.addGoogle(data, function(error, body){
-          console.log("account", body);
-          // var accountId = 12;
-          // User.add(data, function(error, body){
-          //   console.log("User", body);
-          // });
+        Account.addGoogle(user, function(error, body){
+          var accountId = body.results[0].data[0].row[0];
+          console.log("accountId : ", accountId);
+          User.add(user, function(error, body){
+            var userId = body.results[0].data[0].row[0];
+            console.log("userId : ", userId);
+
+            user.id = userId
+            done(null, user);
+
+            Account.linkWithUser(accountId, userId, function(error, body){
+              return;
+            });
+          });
         });
 
-        //return done(err, user);
       }
     ));
 

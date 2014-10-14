@@ -5,5 +5,13 @@ angular.module('hiveup-main')
 
     $scope.name = "cyril";
 
+    $scope.googleAuth = function() {
+    	window.gaWindowSuccess = function(){
+    		$scope.name = "gaWindowSuccess";
+    		$scope.$apply();
+    	}
+    	var gaWindow = window.open("/auth/google", "gaWindow", "height=600, width=450");
+    };
+
 });
 

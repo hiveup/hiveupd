@@ -30,6 +30,7 @@ var app = express();
 // view engine setup
 // app.set('views', path.join(__dirname, 'public/views'));
 // app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 // for passport
 app.use(bodyParser());
@@ -40,7 +41,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
